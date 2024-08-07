@@ -11,6 +11,10 @@
 		EDF4FC0B2C632EFD00F949D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4FC0A2C632EFD00F949D9 /* ContentView.swift */; };
 		EDF4FC0D2C632F0100F949D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF4FC0C2C632F0100F949D9 /* Assets.xcassets */; };
 		EDF4FC102C632F0100F949D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF4FC0F2C632F0100F949D9 /* Preview Assets.xcassets */; };
+		EDF4FC172C632F4600F949D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4FC162C632F4600F949D9 /* User.swift */; };
+		EDF4FC192C632F5000F949D9 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4FC182C632F5000F949D9 /* Friend.swift */; };
+		EDF4FC1B2C63743900F949D9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4FC1A2C63743900F949D9 /* UserView.swift */; };
+		EDF4FC1D2C63E5C300F949D9 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4FC1C2C63E5C200F949D9 /* UserDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		EDF4FC0A2C632EFD00F949D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EDF4FC0C2C632F0100F949D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDF4FC0F2C632F0100F949D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDF4FC162C632F4600F949D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EDF4FC182C632F5000F949D9 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		EDF4FC1A2C63743900F949D9 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		EDF4FC1C2C63E5C200F949D9 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 			children = (
 				EDF4FC082C632EFD00F949D9 /* MatchFriendsApp.swift */,
 				EDF4FC0A2C632EFD00F949D9 /* ContentView.swift */,
+				EDF4FC1A2C63743900F949D9 /* UserView.swift */,
+				EDF4FC1C2C63E5C200F949D9 /* UserDetailView.swift */,
+				EDF4FC162C632F4600F949D9 /* User.swift */,
+				EDF4FC182C632F5000F949D9 /* Friend.swift */,
 				EDF4FC0C2C632F0100F949D9 /* Assets.xcassets */,
 				EDF4FC0E2C632F0100F949D9 /* Preview Content */,
 			);
@@ -139,6 +151,10 @@
 			files = (
 				EDF4FC0B2C632EFD00F949D9 /* ContentView.swift in Sources */,
 				EDF4FC092C632EFD00F949D9 /* MatchFriendsApp.swift in Sources */,
+				EDF4FC1B2C63743900F949D9 /* UserView.swift in Sources */,
+				EDF4FC172C632F4600F949D9 /* User.swift in Sources */,
+				EDF4FC1D2C63E5C300F949D9 /* UserDetailView.swift in Sources */,
+				EDF4FC192C632F5000F949D9 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

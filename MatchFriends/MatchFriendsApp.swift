@@ -5,6 +5,7 @@
 //  Created by Jesutofunmi Adewole on 07/08/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,5 +14,6 @@ struct MatchFriendsApp: App {
         WindowGroup {
             ContentView()
         }
+//        .modelContainer(for: User.self)
     }
 }
