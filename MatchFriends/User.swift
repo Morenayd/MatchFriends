@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 
+//@Model
 struct User: Codable, Identifiable, Hashable {
     var id: String
     var isActive: Bool
@@ -34,7 +35,7 @@ struct User: Codable, Identifiable, Hashable {
 //        self.tags = tags
 //        self.friends = friends
 //    }
-    
+//    
 //    enum CodingKeys: String, CodingKey {
 //        case _id = "id"
 //        case _isActive = "isActive"
@@ -48,7 +49,7 @@ struct User: Codable, Identifiable, Hashable {
 //        case _tags = "tags"
 //        case _friends = "friends"
 //    }
-    
+//    
 //    required init(from decoder: Decoder) throws {
 //        let container = try decoder.container(keyedBy: CodingKeys.self)
 //        id = try container.decode(String.self, forKey: ._id)

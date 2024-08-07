@@ -15,7 +15,6 @@ struct UserView: View {
         
         Section {
             List {
-                LazyVStack {
                     ForEach(users, id:\.self) { user in
                         NavigationLink(value: user, label: {
                             HStack {
@@ -35,7 +34,6 @@ struct UserView: View {
                                     .foregroundColor( user.isActive ? .green : .yellow)
                             }
                         })
-                    }
                 }
             }
         }
