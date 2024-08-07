@@ -37,46 +37,36 @@ class User: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case _id = "id"
-        case _isActive = "isActive"
-        case _name = "name"
-        case _age = "age"
-        case _company = "company"
-        case _email = "email"
-        case _address = "address"
-        case _about = "about"
-        case _registered = "registered"
-        case _tags = "tags"
-        case _friends = "friends"
+        case id, isActive, name, age, company, email, address, about, registered, tags, friends
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: ._id)
-        isActive = try container.decode(Bool.self, forKey: ._isActive)
-        name = try container.decode(String.self, forKey: ._name)
-        age = try container.decode(Int.self, forKey: ._age)
-        company = try container.decode(String.self, forKey: ._company)
-        email = try container.decode(String.self, forKey: ._email)
-        address = try container.decode(String.self, forKey: ._address)
-        about = try container.decode(String.self, forKey: ._about)
-        registered = try container.decode(Date.self, forKey: ._registered)
-        tags = try container.decode([String].self, forKey: ._tags)
-        friends = try container.decode([Friend].self, forKey: ._friends)
+        id = try container.decode(String.self, forKey: .id)
+        isActive = try container.decode(Bool.self, forKey: .isActive)
+        name = try container.decode(String.self, forKey: .name)
+        age = try container.decode(Int.self, forKey: .age)
+        company = try container.decode(String.self, forKey: .company)
+        email = try container.decode(String.self, forKey: .email)
+        address = try container.decode(String.self, forKey: .address)
+        about = try container.decode(String.self, forKey: .about)
+        registered = try container.decode(Date.self, forKey: .registered)
+        tags = try container.decode([String].self, forKey: .tags)
+        friends = try container.decode([Friend].self, forKey: .friends)
         }
 
         func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
-            try container.encode(id, forKey: ._id)
-            try container.encode(isActive, forKey: ._isActive)
-            try container.encode(name, forKey: ._name)
-            try container.encode(age, forKey: ._age)
-            try container.encode(company, forKey: ._company)
-            try container.encode(email, forKey: ._email)
-            try container.encode(address, forKey: ._address)
-            try container.encode(about, forKey: ._about)
-            try container.encode(registered, forKey: ._registered)
-            try container.encode(tags, forKey: ._tags)
-            try container.encode(friends, forKey: ._friends)
+            try container.encode(id, forKey: .id)
+            try container.encode(isActive, forKey: .isActive)
+            try container.encode(name, forKey: .name)
+            try container.encode(age, forKey: .age)
+            try container.encode(company, forKey: .company)
+            try container.encode(email, forKey: .email)
+            try container.encode(address, forKey: .address)
+            try container.encode(about, forKey: .about)
+            try container.encode(registered, forKey: .registered)
+            try container.encode(tags, forKey: .tags)
+            try container.encode(friends, forKey: .friends)
         }
 }
