@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct UserView: View {
-    @Binding var users: [User]
+    var users: [User]
     
     var body: some View {
         
@@ -47,16 +47,16 @@ struct UserView: View {
 }
 
 #Preview {
-//    do {
-//        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-//        let container = try ModelContainer(for: User.self, configurations: config)
-        @State var exampleUsers = [
-            User(id: "djakda", isActive: true, name: "Adebowale Oyewale", age: 25, company: "Fertitude", email: "ade@fert.co", address: "Tinubuoye Street, Lokoja area, Lagos", about: "Just a friendly soul", registered: Date(), tags: ["friend"], friends: []),
-            User(id: "edafafd", isActive: false, name: "Tolulope Oga", age: 25, company: "Fertitude", email: "ade@fert.co", address: "Tinubuoye Street, Lokoja area, Lagos", about: "Just a friendly soul", registered: Date(), tags: ["friend"], friends: [])
-        ]
-        return UserView(users: $exampleUsers)
-//        .modelContainer(container)
-//    } catch {
-//        return Text("Failed to create preview: \(error.localizedDescription)")
-//    }
+    do {
+            let config = ModelConfiguration(isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: User.self, configurations: config)
+            let exampleUsers = [
+                User(id: "djakda", isActive: true, name: "Adebowale Oyewale", age: 25, company: "Fertitude", email: "ade@fert.co", address: "Tinubuoye Street, Lokoja area, Lagos", about: "Just a friendly soul", registered: Date(), tags: ["friend"], friends: []),
+                User(id: "edafafd", isActive: false, name: "Tolulope Oga", age: 25, company: "Fertitude", email: "ade@fert.co", address: "Tinubuoye Street, Lokoja area, Lagos", about: "Just a friendly soul", registered: Date(), tags: ["friend"], friends: [])
+            ]
+            return UserView(users: exampleUsers)
+                .modelContainer(container)
+        } catch {
+            return Text("Failed to create preview: \(error.localizedDescription)")
+        }
 }

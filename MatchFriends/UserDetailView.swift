@@ -5,6 +5,7 @@
 //  Created by Jesutofunmi Adewole on 07/08/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct UserDetailView: View {
@@ -23,9 +24,9 @@ struct UserDetailView: View {
                             .frame(width: 400, height: 290)
                     }
                     Text(user.email)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.black)
                         .padding()
-                        .background(.black)
+                        .background(user.isActive ? .green : .yellow)
                         .clipShape(.rect(cornerRadius: 10))
                 }
                 
@@ -94,5 +95,13 @@ struct UserDetailView: View {
 }
 
 #Preview {
-    UserDetailView(user: User(id: "djakda", isActive: true, name: "Adebowale Oyewale", age: 25, company: "Fertitude", email: "ade@fert.co", address: "Tinubuoye Street, Lokoja area, Lagos", about: "Just a friendly soul", registered: Date(), tags: ["friend", "hater", "for real"], friends: []))
+    do {
+         let config = ModelConfiguration(isStoredInMemoryOnly: true)
+         let container = try ModelContainer(for: User.self, configurations: config)
+         let exampleUser = User(id: "djakda", isActive: true, name: "Adebowale Oyewale", age: 25, company: "Fertitude", email: "ade@fert.co", address: "Tinubuoye Street, Lokoja area, Lagos", about: "Just a friendly soul", registered: Date(), tags: ["friend", "hater", "for real"], friends: [])
+         return UserDetailView(user: exampleUser)
+             .modelContainer(container)
+     } catch {
+         return Text("Failed to create preview: \(error.localizedDescription)")
+     }
 }

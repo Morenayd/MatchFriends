@@ -5,14 +5,16 @@
 //  Created by Jesutofunmi Adewole on 07/08/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @State private var users = [User]()
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: \User.name) var users: [User]
     
     var body: some View {
         NavigationStack {
-            UserView(users: $users)
+            UserView(users: users)
                 .navigationTitle("MatchFriends")
         }
         .onAppear {
@@ -25,7 +27,10 @@ struct ContentView: View {
     func loadUsers() async {
         if (users.isEmpty) {
             do {
-                users = try await getUsers()
+                let fetchedUsers = try await getUsers()
+                for user in fetchedUsers {
+                    modelContext.insert(user)
+                }
             } catch {
                 print(error.localizedDescription)
             }
@@ -44,9 +49,15 @@ struct ContentView: View {
         print(decodedData)
         return decodedData
     }
-    
 }
 
 #Preview {
-    ContentView()
+    do {
+            let config = ModelConfiguration(isStoredInMemoryOnly: true)
+            let container = try ModelContainer(for: User.self, configurations: config)
+            return ContentView()
+                .modelContainer(container)
+        } catch {
+            return Text("Failed to create preview: \(error.localizedDescription)")
+        }
 }
